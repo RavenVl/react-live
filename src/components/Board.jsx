@@ -1,5 +1,5 @@
 import React from 'react';
-import Cell from './Cell';
+import CellContainer from '../container/CellContainer';
 class Board extends React.Component {
 
     render() {
@@ -15,7 +15,7 @@ class Board extends React.Component {
                                     <tr key={key}>
                                         {elem.map((cell, key1)=>{
                                             return (
-                                                <Cell key={key1} live={cell}/>
+                                                <CellContainer key={key1} live={cell} _id={`${key}${key1}`}/>
                                             )
                                         })}
                                     </tr>
