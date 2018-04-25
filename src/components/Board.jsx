@@ -1,6 +1,7 @@
 import React from 'react';
-
+import Cell from './Cell';
 class Board extends React.Component {
+
     render() {
         return (
             <div className="card">
@@ -8,11 +9,19 @@ class Board extends React.Component {
                     This is some text within a card body.
                     <table>
                         <tbody>
-                        <tr>
+
                             {this.props.table.map((elem, key) => {
-                                return <td key={key}>{elem}</td>
+                                return (
+                                    <tr key={key}>
+                                        {elem.map((cell, key1)=>{
+                                            return (
+                                                <Cell key={key1} live={cell}/>
+                                            )
+                                        })}
+                                    </tr>
+                                )
                             })}
-                        </tr>
+
                         </tbody>
 
 
