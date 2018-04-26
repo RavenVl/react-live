@@ -6,8 +6,7 @@ class Board extends React.Component {
         return (
             <div className="card">
                 <div className="card-body">
-                    This is some text within a card body.
-                    <table>
+                    <table className="blueTable">
                         <tbody>
 
                             {this.props.table.map((elem, key) => {
@@ -15,7 +14,7 @@ class Board extends React.Component {
                                     <tr key={key}>
                                         {elem.map((cell, key1)=>{
                                             return (
-                                                <CellContainer key={key1} live={cell} _id={`${key}${key1}`}/>
+                                                <CellContainer key={`${key}${key1}`} live={cell} _id={`${key}${key1}`}/>
                                             )
                                         })}
                                     </tr>

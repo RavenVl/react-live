@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import Head from '../components/Head';
-import {SET_SIZE} from '../reducers';
+import {SET_SIZE,START} from '../reducers';
 
 function mapStateToProps(state) {
     return {
@@ -12,12 +12,14 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return {
         setSize: (e) => {
-            //let inp = e.target.previousElementSibling.children[1];
             e.preventDefault();
-            //console.log(e.target.parentElement.firstElementChild.children[1].value);
-            let size =e.target.parentElement.firstElementChild.children[1].value;
+            let size = document.getElementById('sizetable').value;
             dispatch({type: SET_SIZE, size: size})
-        }
+        },
+        start: (e)=> {
+            e.preventDefault();
+            dispatch({type: START})
+    }
 
     };
 }

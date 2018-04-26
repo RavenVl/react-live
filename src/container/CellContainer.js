@@ -11,7 +11,8 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return {
         setLive: (e) => {
-            console.log(e.currentTarget.id);
+            e.stopPropagation();
+            //console.log(e.currentTarget.id);
             dispatch({type: SET_LIVE, id: e.currentTarget.id})
         }
 

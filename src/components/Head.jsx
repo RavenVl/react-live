@@ -11,13 +11,19 @@ class Head extends React.Component{
                         <form>
                             <div className="form-group">
                                 <label htmlFor="exampleInputEmail1">Size table</label>
-                                <input type="number" className="form-control" id="sizetable"/>
-                                <label >{this.props.size}</label>
+                                <input type="number" className="form-control" id="sizetable" defaultValue="10"/>
                             </div>
-                            <button type="submit"
+                            <div className="form-group">
+                                <button
                                     className="btn btn-primary"
                                     onClick= {this.props.setSize}
-                            >Установить</button>
+                                >Установить</button>
+                                <button
+                                    className="btn btn-primary ml-2"
+                                    onClick= {this.props.start}
+                                >Запуск</button>
+                            </div>
+
                         </form>
                     </div>
                 </div>
